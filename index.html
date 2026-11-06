@@ -844,6 +844,189 @@
       box-shadow: var(--shadow-sm);
     }
 
+    
+    /* =====================================================================
+       SECTEURS D'ACTIVIT - CARTES AVEC IMAGES, BACKDROP COULEUR & RESPONSIVE
+       ===================================================================== */
+    .sectors-grid-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+      .sectors-grid-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .sectors-grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sectors-grid-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    .sector-item-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+      position: relative;
+    }
+
+    .sector-item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12), 0 0 20px rgba(37, 99, 235, 0.08);
+      border-color: #93C5FD;
+    }
+
+    .sector-img-container {
+      position: relative;
+      width: 100%;
+      height: 155px;
+      overflow: hidden;
+      background: #0F172A;
+    }
+
+    .sector-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .sector-item-card:hover .sector-card-img {
+      transform: scale(1.08);
+    }
+
+    .sector-img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.75) 100%);
+      pointer-events: none;
+    }
+
+    .sector-badge-floating {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 2;
+    }
+
+    .sector-floating-emoji {
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .sector-floating-cat {
+      font-size: 11px;
+      font-weight: 700;
+      color: #F8FAFC;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sector-card-body {
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* Zone de texte avec couleur en arrire-plan (derrire des ecrit il doit avoir une couleur) */
+    .sector-text-backdrop {
+      padding: 12px 14px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+
+    .sector-card-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0F172A;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+    }
+
+    .sector-card-desc {
+      font-size: 12.8px;
+      color: #334155;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .sector-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+
+    .sector-feature-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 65%;
+    }
+
+    .btn-sector-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1D4ED8;
+      text-decoration: none;
+      padding: 5px 11px;
+      border-radius: 6px;
+      background: rgba(29, 78, 216, 0.08);
+      border: 1px solid rgba(29, 78, 216, 0.2);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-sector-action:hover {
+      background: #1D4ED8;
+      color: #FFFFFF;
+      border-color: #1D4ED8;
+      transform: translateX(2px);
+    }
+
     .sectors-grid-cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1413,7 +1596,193 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(1.15); }
     }
-  </style>
+  
+/* SECTEURS STYLES AUTO */
+/* =====================================================================
+   SECTEURS SECTION - IMAGES, BACKDROP COULEUR & RESPONSIVE
+   ===================================================================== */
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+}
+
+@media (max-width: 1200px) {
+  .sectors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectors-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.sector-item-card {
+  background: #0E172A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.sector-item-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.12);
+}
+
+.sector-img-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: #1E293B;
+}
+
+.sector-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.sector-item-card:hover .sector-img {
+  transform: scale(1.08);
+}
+
+.sector-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(14, 23, 42, 0.85) 100%);
+  pointer-events: none;
+}
+
+.sector-badge-floating {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 2;
+}
+
+.sector-floating-emoji {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.sector-floating-cat {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #E2E8F0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sector-card-content {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Zone texte avec couleur de fond ddie (derrire des crit il doit avoir une couleur) */
+.sector-text-backdrop {
+  padding: 12px 14px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.sector-card-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.sector-card-desc {
+  font-size: 12.8px;
+  color: #CBD5E1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sector-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sector-feature-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
+
+.btn-sector-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #38BDF8;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-sector-action:hover {
+  background: #0284C7;
+  color: #FFFFFF;
+  border-color: #0284C7;
+  transform: translateX(2px);
+}
+/* END SECTEURS STYLES AUTO */
+</style>
 </head>
 <body>
 
@@ -1804,264 +2173,564 @@
       </div>
 
       <div class="sectors-grid-cards" id="sectorsGridContainer">
-        <!-- 1. Quincaillerie -->
+        <!-- 1. Quincaillerie & Matériaux -->
         <div class="sector-item-card" data-cat="btp">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🔨</div>
-            <div>
-              <div class="sector-category-badge">BTP & Construction</div>
-              <h5>Quincaillerie & Matériaux</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80" alt="Quincaillerie & Matériaux" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🔨</span>
+              <span class="sector-floating-cat">BTP & Construction</span>
             </div>
           </div>
-          <p>Ciment, fer à béton, outillage, plomberie, électricité, vente en gros/détail, suivi des chantiers et bons de livraison.</p>
-          <span class="sector-special-badge">Gestion sacs, tonnes & métrages</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(234, 88, 12, 0.10) 0%, rgba(255, 247, 237, 0.95) 100%); border-left: 4px solid #EA580C;">
+              <h5 class="sector-card-title">Quincaillerie & Matériaux</h5>
+              <p class="sector-card-desc">Ciment, fer à béton, outillage, plomberie. Unités variables (mètre, kilo, barre), gestion des chantiers et bons de livraison.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(234, 88, 12, 0.35); color: #EA580C; background: rgba(234, 88, 12, 0.12);">
+                ★ Mètre, kg, barre & devis chantiers
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 2. Poissonnerie -->
+        <!-- 2. Poissonnerie & Produits Frais -->
         <div class="sector-item-card" data-cat="alimentaire">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🐟</div>
-            <div>
-              <div class="sector-category-badge">Alimentation & Frais</div>
-              <h5>Poissonnerie & Produits Frais</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=600&q=80" alt="Poissonnerie & Produits Frais" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🐟</span>
+              <span class="sector-floating-cat">Alimentation & Frais</span>
             </div>
           </div>
-          <p>Poissons congelés, viandes, volailles. Gestion rigoureuse des cartons, pesées au kg, pertes et contrôle des chambres froides.</p>
-          <span class="sector-special-badge">Gestion pesée & cartons</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.10) 0%, rgba(240, 249, 255, 0.95) 100%); border-left: 4px solid #0284C7;">
+              <h5 class="sector-card-title">Poissonnerie & Produits Frais</h5>
+              <p class="sector-card-desc">Poissons congelés, viandes, volailles. Pesage au gramme près, gestion du calibrage, chaîne du froid et pertes de décongélation.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(2, 132, 199, 0.35); color: #0284C7; background: rgba(2, 132, 199, 0.12);">
+                ★ Gestion balance & pesage précis
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 3. Restaurant -->
+        <!-- 3. Bar, Restaurant & Maquis -->
         <div class="sector-item-card" data-cat="alimentaire">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🍽️</div>
-            <div>
-              <div class="sector-category-badge">Restauration</div>
-              <h5>Bar, Restaurant & Maquis</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Bar, Restaurant & Maquis" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🍹</span>
+              <span class="sector-floating-cat">Restauration & Boissons</span>
             </div>
           </div>
-          <p>Gestion des tables, commandes cuisine, menus du jour, livraisons, gestion des boissons fraîches et additions partagées.</p>
-          <span class="sector-special-badge">Tables & Commandes cuisine</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(217, 119, 6, 0.10) 0%, rgba(254, 243, 199, 0.95) 100%); border-left: 4px solid #D97706;">
+              <h5 class="sector-card-title">Bar, Restaurant & Maquis</h5>
+              <p class="sector-card-desc">Gestion des tables, commandes cuisine, menus du jour, stocks boissons fraîches, serveurs et additions fractionnées.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(217, 119, 6, 0.35); color: #D97706; background: rgba(217, 119, 6, 0.12);">
+                ★ Plan de tables & cuisine live
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 4. Supermarché -->
+        <!-- 4. Supermarché & Supérette -->
         <div class="sector-item-card" data-cat="commerce">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🛒</div>
-            <div>
-              <div class="sector-category-badge">Grande Distribution</div>
-              <h5>Supermarché & Supérette</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80" alt="Supermarché & Supérette" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🛒</span>
+              <span class="sector-floating-cat">Commerce de détail</span>
             </div>
           </div>
-          <p>Multiples rayons, douchette code-barres ultra rapide, contrôle des dates limites de consommation (DLC) et promotions.</p>
-          <span class="sector-special-badge">Caisse rapide & Code-barres</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(5, 150, 105, 0.10) 0%, rgba(236, 253, 245, 0.95) 100%); border-left: 4px solid #059669;">
+              <h5 class="sector-card-title">Supermarché & Supérette</h5>
+              <p class="sector-card-desc">Scan code-barres ultra-rapide, tickets thermiques, alertes péremptions DLC, inventaire tournant et encaissement multi-caisses.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(5, 150, 105, 0.35); color: #059669; background: rgba(5, 150, 105, 0.12);">
+                ★ Scanner code-barres & multi-caisses
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 5. Pharmacie -->
+        <!-- 5. Pharmacie & Dépôt Médical -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">💊</div>
-            <div>
-              <div class="sector-category-badge">Santé & Médicaments</div>
-              <h5>Pharmacie & Dépôt Médical</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=600&q=80" alt="Pharmacie & Dépôt Médical" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">💊</span>
+              <span class="sector-floating-cat">Santé & Officine</span>
             </div>
           </div>
-          <p>Gestion des ordonnances, traçabilité des numéros de lot, alertes de péremption et respect des normes sanitaires.</p>
-          <span class="sector-special-badge">Numéros de lot & DLC</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(13, 148, 136, 0.10) 0%, rgba(240, 253, 250, 0.95) 100%); border-left: 4px solid #0D9488;">
+              <h5 class="sector-card-title">Pharmacie & Dépôt Médical</h5>
+              <p class="sector-card-desc">Traçabilité des lots et dates d'expiration, gestion des ordonnances, équivalences DCI et tiers-payant assurances.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(13, 148, 136, 0.35); color: #0D9488; background: rgba(13, 148, 136, 0.12);">
+                ★ Lots, DCI & traçabilité DLC
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 6. Station-Service -->
+        <!-- 6. Station-Service & Hydrocarbures -->
         <div class="sector-item-card" data-cat="btp">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">⛽</div>
-            <div>
-              <div class="sector-category-badge">Énergie & Carburants</div>
-              <h5>Station-Service & Hydrocarbures</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=600&q=80" alt="Station-Service & Hydrocarbures" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">⛽</span>
+              <span class="sector-floating-cat">Énergie & Pétrole</span>
             </div>
           </div>
-          <p>Relevé des index pompes, niveau des cuves, clôtures de postes par pompiste, vente de lubrifiants et fûts.</p>
-          <span class="sector-special-badge">Index pompes & Postes pompistes</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(180, 83, 9, 0.10) 0%, rgba(254, 243, 199, 0.95) 100%); border-left: 4px solid #B45309;">
+              <h5 class="sector-card-title">Station-Service & Hydrocarbures</h5>
+              <p class="sector-card-desc">Jaugeage des cuves souterraines, index compteurs pistolets, gestion des pompistes par shift et vente des lubrifiants.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(180, 83, 9, 0.35); color: #B45309; background: rgba(180, 83, 9, 0.12);">
+                ★ Index pistolets & jauge cuves
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 7. Hôtel -->
+        <!-- 7. Hôtel, Résidence & Auberge -->
         <div class="sector-item-card" data-cat="alimentaire">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🏨</div>
-            <div>
-              <div class="sector-category-badge">Hôtellerie</div>
-              <h5>Hôtel, Résidence & Auberge</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hôtel, Résidence & Auberge" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🏨</span>
+              <span class="sector-floating-cat">Hôtellerie & Hébergement</span>
             </div>
           </div>
-          <p>Planning visuel des chambres, réservations, check-in / check-out, room-service, facturation des nuitées et blanchisserie.</p>
-          <span class="sector-special-badge">Planning chambres & Nuitées</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.10) 0%, rgba(245, 243, 255, 0.95) 100%); border-left: 4px solid #7C3AED;">
+              <h5 class="sector-card-title">Hôtel, Résidence & Auberge</h5>
+              <p class="sector-card-desc">Planning des chambres, check-in / check-out, fiches de police, room-service et facturation centralisée des séjours.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(124, 58, 237, 0.35); color: #7C3AED; background: rgba(124, 58, 237, 0.12);">
+                ★ Planning nuitées & fiches police
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 8. École -->
+        <!-- 8. École & Centre de Formation -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🎓</div>
-            <div>
-              <div class="sector-category-badge">Éducation</div>
-              <h5>École & Centre de Formation</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="École & Centre de Formation" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🎓</span>
+              <span class="sector-floating-cat">Éducation & Formation</span>
             </div>
           </div>
-          <p>Gestion des frais de scolarité, effectifs élèves par classe, tranches de paiement, reçus officiels et suivi des impayés.</p>
-          <span class="sector-special-badge">Scolarités & Reçus officiels</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(29, 78, 216, 0.10) 0%, rgba(239, 246, 255, 0.95) 100%); border-left: 4px solid #1D4ED8;">
+              <h5 class="sector-card-title">École & Centre de Formation</h5>
+              <p class="sector-card-desc">Suivi des écolages et tranches, reçus d'inscription officiels, fiches élèves, gestion des professeurs et relances impayés.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(29, 78, 216, 0.35); color: #1D4ED8; background: rgba(29, 78, 216, 0.12);">
+                ★ Écolages & reçus de scolarité
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 9. Immobilier -->
+        <!-- 9. Gestion Locative & Immobilier -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🏠</div>
-            <div>
-              <div class="sector-category-badge">Immobilier</div>
-              <h5>Gestion Locative & Immobilier</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Gestion Locative & Immobilier" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🏢</span>
+              <span class="sector-floating-cat">Immobilier & Baux</span>
             </div>
           </div>
-          <p>Contrats de bail, suivi des loyers mensuels par locataire, génération de quittances et relances automatiques des retards.</p>
-          <span class="sector-special-badge">Baux, Loyers & Quittances</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.10) 0%, rgba(238, 242, 255, 0.95) 100%); border-left: 4px solid #4F46E5;">
+              <h5 class="sector-card-title">Gestion Locative & Immobilier</h5>
+              <p class="sector-card-desc">Quittances de loyer automatiques, contrats de baux, suivi des locataires, cautions, charges et reversements propriétaires.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(79, 70, 229, 0.35); color: #4F46E5; background: rgba(79, 70, 229, 0.12);">
+                ★ Quittances auto & baux locatifs
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 10. Garage -->
+        <!-- 10. Atelier, Garage & Mécanique -->
         <div class="sector-item-card" data-cat="btp">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🚗</div>
-            <div>
-              <div class="sector-category-badge">Automobile</div>
-              <h5>Atelier, Garage & Mécanique</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Atelier, Garage & Mécanique" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🔧</span>
+              <span class="sector-floating-cat">Automobile & Réparation</span>
             </div>
           </div>
-          <p>Ordres de réparation (OR), devis mécanique, gestion du stock de pièces détachées et facturation de la main-d’œuvre.</p>
-          <span class="sector-special-badge">Ordres de réparation & Pièces</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.10) 0%, rgba(254, 242, 242, 0.95) 100%); border-left: 4px solid #DC2626;">
+              <h5 class="sector-card-title">Atelier, Garage & Mécanique</h5>
+              <p class="sector-card-desc">Ordres de réparation (OR), pièces détachées sorties du stock, suivi main-d’œuvre mécanicien et historique véhicule.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(220, 38, 38, 0.35); color: #DC2626; background: rgba(220, 38, 38, 0.12);">
+                ★ Ordres de réparation & pièces
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 11. Imprimerie -->
+        <!-- 11. Imprimerie & Sérigraphie -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🖨️</div>
-            <div>
-              <div class="sector-category-badge">Industrie Graphique</div>
-              <h5>Imprimerie & Sérigraphie</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=600&q=80" alt="Imprimerie & Sérigraphie" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🖨️</span>
+              <span class="sector-floating-cat">Industrie & Graphisme</span>
             </div>
           </div>
-          <p>Devis personnalisés, calcul des tirages papier/bâche, validation des BAT et suivi des étapes de production en atelier.</p>
-          <span class="sector-special-badge">Devis sur-mesure & BAT</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.10) 0%, rgba(236, 254, 255, 0.95) 100%); border-left: 4px solid #0891B2;">
+              <h5 class="sector-card-title">Imprimerie & Sérigraphie</h5>
+              <p class="sector-card-desc">Calcul coût au m², tirages bâche/papier, gestion des encres, acomptes clients et suivi du BAT jusqu'à livraison.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(8, 145, 178, 0.35); color: #0891B2; background: rgba(8, 145, 178, 0.12);">
+                ★ Calcul au m² & gestion BAT
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 12. Brasserie / Dépôt de Boissons -->
+        <!-- 12. Brasserie & Dépôt de Boissons -->
         <div class="sector-item-card" data-cat="commerce">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🍾</div>
-            <div>
-              <div class="sector-category-badge">Boissons</div>
-              <h5>Brasserie & Dépôt de Boissons</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=600&q=80" alt="Brasserie & Dépôt de Boissons" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🍾</span>
+              <span class="sector-floating-cat">Commerce de gros</span>
             </div>
           </div>
-          <p>Gestion des casiers consignés, suivi des bouteilles pleines et vides, ventes aux grossistes et maquisards.</p>
-          <span class="sector-special-badge">Casiers & Bouteilles consignées</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(234, 88, 12, 0.10) 0%, rgba(255, 247, 237, 0.95) 100%); border-left: 4px solid #EA580C;">
+              <h5 class="sector-card-title">Brasserie & Dépôt de Boissons</h5>
+              <p class="sector-card-desc">Gestion des emballages consignés (casiers, bouteilles), tarifs de gros/demi-gros et gestion des crédits distributeurs.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(234, 88, 12, 0.35); color: #EA580C; background: rgba(234, 88, 12, 0.12);">
+                ★ Gestion consignes & casiers
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 13. Microfinance -->
+        <!-- 13. Microfinance & Tontine -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🏦</div>
-            <div>
-              <div class="sector-category-badge">Services Financiers</div>
-              <h5>Microfinance & Tontine</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80" alt="Microfinance & Tontine" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">💰</span>
+              <span class="sector-floating-cat">Finance & Épargne</span>
             </div>
           </div>
-          <p>Collecte des cotisations journalières, tenue des carnets de tontine, octroi de micro-crédits et suivi des remboursements.</p>
-          <span class="sector-special-badge">Carnets de tontine & Épargne</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(13, 148, 136, 0.10) 0%, rgba(240, 253, 250, 0.95) 100%); border-left: 4px solid #0D9488;">
+              <h5 class="sector-card-title">Microfinance & Tontine</h5>
+              <p class="sector-card-desc">Comptes d'épargne journalière (adogbè), échéanciers de crédit, calcul des intérêts et clôtures de collecte terrain.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(13, 148, 136, 0.35); color: #0D9488; background: rgba(13, 148, 136, 0.12);">
+                ★ Tontine quotidienne & crédits
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 14. Agro-Business -->
+        <!-- 14. Agro-Business & Élevage -->
         <div class="sector-item-card" data-cat="alimentaire">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🌱</div>
-            <div>
-              <div class="sector-category-badge">Agriculture & Élevage</div>
-              <h5>Agro-Business & Élevage</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80" alt="Agro-Business & Élevage" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🌱</span>
+              <span class="sector-floating-cat">Agriculture & Ferme</span>
             </div>
           </div>
-          <p>Suivi des intrants agricoles, provendes, alimentation du bétail/volaille, récoltes et ventes en gros sur les marchés.</p>
-          <span class="sector-special-badge">Intrants, Récoltes & Vente gros</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(101, 163, 13, 0.10) 0%, rgba(247, 254, 231, 0.95) 100%); border-left: 4px solid #65A30D;">
+              <h5 class="sector-card-title">Agro-Business & Élevage</h5>
+              <p class="sector-card-desc">Cycles de ponte, engraissement volaille/porcin, consommations d'aliments, mortalité et rentabilité par bande.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(101, 163, 13, 0.35); color: #65A30D; background: rgba(101, 163, 13, 0.12);">
+                ★ Suivi bandes & coûts d'élevage
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 15. Cosmétiques & Beauté -->
+        <!-- 15. Cosmétiques & Salons de Beauté -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">✨</div>
-            <div>
-              <div class="sector-category-badge">Beauté & Bien-être</div>
-              <h5>Cosmétiques & Salons de Beauté</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Cosmétiques & Salons de Beauté" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">💄</span>
+              <span class="sector-floating-cat">Beauté & Bien-être</span>
             </div>
           </div>
-          <p>Vente de produits cosmétiques, gestion des forfaits soins, rendez-vous et suivi des prestations de coiffure.</p>
-          <span class="sector-special-badge">Prestations soins & Produits</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(219, 39, 119, 0.10) 0%, rgba(253, 242, 248, 0.95) 100%); border-left: 4px solid #DB2777;">
+              <h5 class="sector-card-title">Cosmétiques & Salons de Beauté</h5>
+              <p class="sector-card-desc">Vente de produits parfumerie, forfaits prestations coiffure/soins, commissions des coiffeuses et planning rendez-vous.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(219, 39, 119, 0.35); color: #DB2777; background: rgba(219, 39, 119, 0.12);">
+                ★ Prestations & commissions
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- 16. Mercerie & Couture -->
         <div class="sector-item-card" data-cat="commerce">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">✂️</div>
-            <div>
-              <div class="sector-category-badge">Mode & Confection</div>
-              <h5>Mercerie & Couture</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Mercerie & Couture" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🧵</span>
+              <span class="sector-floating-cat">Textile & Mode</span>
             </div>
           </div>
-          <p>Vente de tissus au mètre, fermetures, accessoires, prises de mesures clients et suivi des commandes de confection.</p>
-          <span class="sector-special-badge">Métrage tissus & Mesures</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.10) 0%, rgba(250, 245, 255, 0.95) 100%); border-left: 4px solid #9333EA;">
+              <h5 class="sector-card-title">Mercerie & Couture</h5>
+              <p class="sector-card-desc">Vente de tissus au coupon ou au yard, carnet de mesures des clients, suivi des commandes modèles et acomptes.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(147, 51, 234, 0.35); color: #9333EA; background: rgba(147, 51, 234, 0.12);">
+                ★ Vente au yard & carnet mesures
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 17. Boutique & Magasin -->
+        <!-- 17. Boutique, Magasin & Bazar -->
         <div class="sector-item-card" data-cat="commerce">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🏪</div>
-            <div>
-              <div class="sector-category-badge">Commerce Détail</div>
-              <h5>Boutique, Magasin & Bazar</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Boutique, Magasin & Bazar" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">👗</span>
+              <span class="sector-floating-cat">Prêt-à-porter & Bazar</span>
             </div>
           </div>
-          <p>Prêt-à-porter, accessoires, chaussures, maroquinerie, alimentation générale. Caisse rapide et inventaires simples.</p>
-          <span class="sector-special-badge">Encaissement comptoir rapide</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(29, 78, 216, 0.10) 0%, rgba(239, 246, 255, 0.95) 100%); border-left: 4px solid #2563EB;">
+              <h5 class="sector-card-title">Boutique, Magasin & Bazar</h5>
+              <p class="sector-card-desc">Déclinaisons tailles & couleurs (S/M/L/XL), inventaire codes-barres étiquettes vêtements et promotions périodiques.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(29, 78, 216, 0.35); color: #2563EB; background: rgba(29, 78, 216, 0.12);">
+                ★ Variantes tailles & coloris
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- 18. Boulangerie & Pâtisserie -->
         <div class="sector-item-card" data-cat="alimentaire">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🥐</div>
-            <div>
-              <div class="sector-category-badge">Artisanat Alimentaire</div>
-              <h5>Boulangerie & Pâtisserie</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Boulangerie & Pâtisserie" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🥖</span>
+              <span class="sector-floating-cat">Boulangerie & Fournil</span>
             </div>
           </div>
-          <p>Gestion des matières premières (farine, sucre, levure), suivi des fournées de pain, gâteaux sur commande et invendus.</p>
-          <span class="sector-special-badge">Fournées & Matières premières</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(202, 138, 4, 0.10) 0%, rgba(254, 252, 232, 0.95) 100%); border-left: 4px solid #CA8A04;">
+              <h5 class="sector-card-title">Boulangerie & Pâtisserie</h5>
+              <p class="sector-card-desc">Consommation sacs de farine/levure, suivi des fournées, gestion des livreurs vélos/motos et gestion des invendus.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(202, 138, 4, 0.35); color: #CA8A04; background: rgba(202, 138, 4, 0.12);">
+                ★ Suivi fournées & livreurs
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- 19. Transport & Logistique -->
         <div class="sector-item-card" data-cat="services">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🚚</div>
-            <div>
-              <div class="sector-category-badge">Transport & Fret</div>
-              <h5>Transport & Logistique</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Transport & Logistique" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🚚</span>
+              <span class="sector-floating-cat">Transport & Fret</span>
             </div>
           </div>
-          <p>Gestion des chargements, bordereaux d'expédition, suivi des chauffeurs, gestion du fret et des trajets interurbains.</p>
-          <span class="sector-special-badge">Bordereaux de fret & Trajets</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.10) 0%, rgba(240, 249, 255, 0.95) 100%); border-left: 4px solid #0284C7;">
+              <h5 class="sector-card-title">Transport & Logistique</h5>
+              <p class="sector-card-desc">Bordereaux d'expédition, lettres de voiture, colis en souffrance, frais de carburant et rentabilité par trajet.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(2, 132, 199, 0.35); color: #0284C7; background: rgba(2, 132, 199, 0.12);">
+                ★ Bordereaux colis & fret
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- 20. Géolocalisation & Flotte -->
+        <!-- 20. Géolocalisation & Flotte IoT -->
         <div class="sector-item-card" data-cat="btp">
-          <div class="sector-card-header">
-            <div class="sector-emoji-box">🛰️</div>
-            <div>
-              <div class="sector-category-badge">Télématique IoT</div>
-              <h5>Géolocalisation & Flotte</h5>
+          <div class="sector-img-container">
+            <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=600&q=80" alt="Géolocalisation & Flotte IoT" class="sector-card-img" loading="lazy" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-badge-floating">
+              <span class="sector-floating-emoji">🛰️</span>
+              <span class="sector-floating-cat">Télématique & Véhicules</span>
             </div>
           </div>
-          <p>Position GPS en direct, consommation de carburant, alertes de maintenance, rapports de vitesse et sécurité des véhicules.</p>
-          <span class="sector-special-badge">Suivi GPS & Télématique IoT</span>
+          <div class="sector-card-body">
+            <!-- Zone de texte avec couleur de fond ddie -->
+            <div class="sector-text-backdrop" style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.10) 0%, rgba(236, 254, 255, 0.95) 100%); border-left: 4px solid #0891B2;">
+              <h5 class="sector-card-title">Géolocalisation & Flotte IoT</h5>
+              <p class="sector-card-desc">Position GPS en direct, abonnements traceurs, alertes vidanges et visites techniques, consommation et immobilisation.</p>
+            </div>
+            <div class="sector-card-footer">
+              <span class="sector-feature-pill" style="border: 1px solid rgba(8, 145, 178, 0.35); color: #0891B2; background: rgba(8, 145, 178, 0.12);">
+                ★ Balises GPS & alertes entretiens
+              </span>
+              <a href="https://gestio229.com/register" class="btn-sector-action" target="_blank" rel="noopener">
+                <span>Essayer</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
